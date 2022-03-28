@@ -23,8 +23,7 @@ node {
     stage(Push image) {
         
         docker.withRegistry(https://registry.hub.docker.com, git) {
-            app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}");
-            app.push("${env.BRANCH_NAME}-latest");
+            app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
             // signal the orchestrator that there is a new version
         }
     }
