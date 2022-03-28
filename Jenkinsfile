@@ -8,7 +8,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("Mato-77/devops5jenkins")
+       app = docker.build("mato11231/devops5jenkins")
     }
 
 //    stage(Test image) {
