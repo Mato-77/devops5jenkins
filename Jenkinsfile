@@ -8,7 +8,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("smokimk/test2")
+       app = docker.build("Mato-77/DevOps-Homework-5")
     }
 
 //    stage(Test image) {
