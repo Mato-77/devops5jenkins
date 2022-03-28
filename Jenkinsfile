@@ -10,7 +10,7 @@ node {
     }
 
     stage(Push image) {
-        docker.withRegistry(https://registry.hub.docker.com, git) {
+        docker.withRegistry('https://registry.hub.docker.com', 'git') {
                             }
      
     }
