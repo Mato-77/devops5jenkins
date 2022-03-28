@@ -1,15 +1,14 @@
 node {
     def app
 
-    stage(Clone repository) {
+    stage('Clone repository') {
       
-
         checkout scm
     }
 
-    stage(Build image) {
+    stage('Build image') {
   
-       app = docker.build("smokimk/test2")
+       app = docker.build("mato11231/devops5jenkins")
     }
 
 //    stage(Test image) {
@@ -20,11 +19,11 @@ node {
 //        }
 //    }
 
-    stage(Push image) {
+    stage('Push image') {
         
-        docker.withRegistry(https://registry.hub.docker.com, git) {
-            app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
-            app.push("${env.BRANCH_NAME}-latest")
+        docker.withRegistry('https://registry.hub.docker.com', 'git') {
+            app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}");
+            app.push("${env.BRANCH_NAME}-latest");
             // signal the orchestrator that there is a new version
         }
     }
